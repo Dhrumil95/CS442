@@ -1,0 +1,103 @@
+package test;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JLabel;
+
+public class mainpage {
+
+	private JFrame frmNeighborhoodInformant;
+    
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					mainpage window = new mainpage();
+					window.frmNeighborhoodInformant.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	public mainpage() {
+		initialize();
+	}
+
+
+	private void initialize() {
+		frmNeighborhoodInformant = new JFrame();
+		frmNeighborhoodInformant.setTitle("Neighborhood Informant");
+		frmNeighborhoodInformant.setBounds(100, 100, 298, 434);
+		frmNeighborhoodInformant.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmNeighborhoodInformant.getContentPane().setLayout(null);
+		
+		//crime data button
+		JButton btnCrime = new JButton("Crime Rates");
+		btnCrime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				crimeMap cData = new crimeMap(frmNeighborhoodInformant);
+				frmNeighborhoodInformant.setVisible(false);
+			}
+		});
+		btnCrime.setBounds(32, 22, 218, 40);
+		frmNeighborhoodInformant.getContentPane().add(btnCrime);
+		
+		//avg income capita data button
+		JButton btnHomes = new JButton("Avg Income/Capita");
+		btnHomes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnHomes.setBounds(32, 74, 218, 40);
+		frmNeighborhoodInformant.getContentPane().add(btnHomes);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnExit.setBounds(32, 326, 218, 40);
+		frmNeighborhoodInformant.getContentPane().add(btnExit);
+		
+		//tax increment financing info button
+		JButton btnTaxIncrementFinancing = new JButton("Tax Increment Financing");
+		btnTaxIncrementFinancing.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnTaxIncrementFinancing.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
+		btnTaxIncrementFinancing.setBounds(32, 136, 218, 53);
+		frmNeighborhoodInformant.getContentPane().add(btnTaxIncrementFinancing);
+		
+		JButton btnUpdateMap = new JButton("Problem Landlords");
+		btnUpdateMap.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnUpdateMap.setBounds(32, 207, 218, 40);
+		frmNeighborhoodInformant.getContentPane().add(btnUpdateMap);
+		
+		JButton btnSchools = new JButton("City of Chicago Homepage");
+		btnSchools.setBounds(32, 259, 218, 40);
+		frmNeighborhoodInformant.getContentPane().add(btnSchools);
+		
+		JLabel lblNewLabel = new JLabel("____________________________________________________");
+		lblNewLabel.setBounds(6, 298, 286, 16);
+		frmNeighborhoodInformant.getContentPane().add(lblNewLabel);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frmNeighborhoodInformant.setJMenuBar(menuBar);
+		
+		JMenu mnOptions = new JMenu("Options");
+		menuBar.add(mnOptions);
+	}
+}

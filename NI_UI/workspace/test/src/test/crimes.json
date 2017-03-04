@@ -1,0 +1,25 @@
+var jsonObject = { "crimes" : [ 
+                               { "lat": 41.87376574 , "lng": -87.69929605, "desc": "CRIMINAL DAMAGE	TO STATE SUP PROP" }, 
+                               { "lat": 41.92488647 , "lng": -87.68913314, "desc": "THEFT	$500 AND UNDER" },
+                               { "lat": 41.88025778 , "lng": -87.73546452, "desc": "NARCOTICS MANU DELIVER CRACK" },
+                               { "lat": 41.90136194 , "lng": -87.62779767, "desc": "CRIMINAL TRESPASS TO LAND" },
+                               { "lat": 41.92067209 , "lng": -87.67284275, "desc": "MOTOR VEHICLE THEFT TRUCK, BUS, MOTOR HOME" },
+                               { "lat": 41.76992556 , "lng": -87.63726788, "desc": "CRIMINAL TRESPASS TO LAND" },
+                               { "lat": 41.89919532 , "lng": -87.76675981, "desc": "NARCOTICS,POSS: CANNABIS 30GMS OR LESS" },
+                               { "lat": 41.74039804 , "lng": -87.66803934, "desc": "NARCOTICS,POSS: CANNABIS 30GMS OR LESS" },
+                               { "lat": 41.77024606 , "lng": -87.64171471, "desc": "NARCOTICS,SOLICIT NARCOTICS ON PUBLICWAY" },
+                               { "lat": 41.85168611 , "lng": -87.71298476, "desc": "BATTERY,DOMESTIC BATTERY SIMPLE" },
+                               { "lat": 41.74899896 , "lng": -87.60517584, "desc": "PROSTITUTION,SOLICIT ON PUBLIC WAY" },
+                               { "lat": 41.87587465 , "lng": -87.7454561, "desc": "NARCOTICS,POSS: CRACK" },
+                               { "lat": 41.78059138 , "lng": -87.66667077, "desc": "CRIMINAL TRESPASS,TO RESIDENCE" },
+                               { "lat": 41.91719252 , "lng": -87.72449773, "desc": "PROSTITUTION,SOLICIT ON PUBLIC WAY" },
+                               { "lat": 41.915734 , "lng": -87.69051849, "desc": "THEFT,FINANCIAL ID THEFT: OVER $300" },
+                               { "lat": 41.80959554 , "lng": -87.63477347, "desc": "HOMICIDE,FIRST DEGREE MURDER" },
+                               { "lat": 41.7722745 , "lng": -87.65839491, "desc": "NARCOTICS,POSS: CANNABIS 30GMS OR LESS" },
+                               { "lat": 41.88931516 , "lng": -87.75447772, "desc": "NARCOTICS,SOLICIT NARCOTICS ON PUBLICWAY" },
+                               { "lat": 41.89605194 , "lng": -87.72365543, "desc": "NARCOTICS,POSS: HEROIN(WHITE)" },
+                               { "lat": 41.96788717 , "lng": -87.66729184, "desc": "NARCOTICS,POSS: CANNABIS 30GMS OR LESS" }
+                                
+                    ]
+                 }
+

@@ -1,0 +1,106 @@
+package test;
+
+/*
+ * Requirements:
+ * 		1) Wifi enabled & connected
+ * 		2) JxBrowser Downloaded
+ */
+
+import java.awt.BorderLayout;
+import java.awt.Desktop;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
+import java.io.IOException; 
+import org.jsoup.Jsoup; 
+import org.jsoup.nodes.Document; 
+import org.jsoup.nodes.Element;
+
+/*
+ * Copyright (c) 2000-2017 TeamDev Ltd. All rights reserved.
+ * TeamDev PROPRIETARY and CONFIDENTIAL.
+ * Use is subject to license terms.
+ */
+
+import com.teamdev.jxbrowser.chromium.Browser;
+import com.teamdev.jxbrowser.chromium.swing.BrowserView;
+
+
+/**
+ * This sample demonstrates how to load a web page with Google Maps
+ * and control it using JxBrowser API.
+ */
+public class GoogleMapsSample {
+
+    public static final int MIN_ZOOM = 0;
+    public static final int MAX_ZOOM = 21;
+
+    /**
+     * In map.html file default zoom value is set to 4.
+     */
+    private static int zoomValue = 4;
+
+    public static void main(String[] args) {
+        final Browser browser = new Browser();
+        BrowserView view = new BrowserView(browser);
+/*
+        JButton zoomInButton = new JButton("Zoom In");
+        zoomInButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (zoomValue < MAX_ZOOM) {
+                    browser.executeJavaScript("map.setZoom(" + ++zoomValue + ")");
+                }
+            }
+        });
+
+        JButton zoomOutButton = new JButton("Zoom Out");
+        zoomOutButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (zoomValue > MIN_ZOOM) {
+                    browser.executeJavaScript("map.setZoom(" + --zoomValue + ")");
+                }
+            }
+        });
+
+        JPanel toolBar = new JPanel();
+        toolBar.add(zoomInButton);
+        toolBar.add(zoomOutButton);
+  */
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.add(view, BorderLayout.CENTER);
+       // frame.add(toolBar, BorderLayout.SOUTH);
+        frame.setSize(900, 500);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+
+        
+        
+        File checkfile = new File("/Users/aiwanhazari/Desktop/test/workspace/test/src/test/map.html"); 
+        if(checkfile.exists() == true)
+        {
+        	System.out.println("Loading Map...");
+            browser.loadURL("file:///Users/aiwanhazari/Desktop/test/workspace/test/src/test/map.html");
+        }
+        else
+         	//JOptionPane.showMessageDialog(null, "Unable to load map!");
+        	 System.out.println("Unable to load map!");
+      
+        String url = "/Users/aiwanhazari/Desktop/test/workspace/test/src/test/map.html";
+        
+        /*File htmlFile = new File(url);
+        try {
+			Desktop.getDesktop().browse(htmlFile.toURI());
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
+    }
+}

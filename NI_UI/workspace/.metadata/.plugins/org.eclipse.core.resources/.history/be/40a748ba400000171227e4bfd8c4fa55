@@ -1,0 +1,47 @@
+package test;
+
+import java.awt.BorderLayout;
+
+import java.io.File;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+
+
+import com.teamdev.jxbrowser.chromium.Browser;
+import com.teamdev.jxbrowser.chromium.swing.BrowserView;
+public class cityWeb {
+	
+	final Browser browser = new Browser();
+    BrowserView view = new BrowserView(browser);
+
+    JFrame frame = new JFrame("City of Chicago Official Site");
+    frame.add(view, BorderLayout.CENTER);
+    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    frame.setSize(1100, 600);
+    frame.setLocationRelativeTo(null); 
+    
+    File checkfile = new File("/Users/aiwanhazari/Desktop/test/workspace/test/src/test/map.html"); 
+    if(checkfile.exists() == true)
+    {
+    	System.out.println("Loading Map...");
+    	frame.setVisible(true); 
+        browser.loadURL("file:///Users/aiwanhazari/Desktop/test/workspace/test/src/test/map.html");
+    }
+    else
+     	JOptionPane.showMessageDialog(null, "Unable to load map!");
+  
+    /* open file in browser
+     String url = "/Users/aiwanhazari/Desktop/test/workspace/test/src/test/map.html";
+    
+    File htmlFile = new File(url);
+    try {
+		Desktop.getDesktop().browse(htmlFile.toURI());
+	} catch (IOException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}*/
+
+
+}
