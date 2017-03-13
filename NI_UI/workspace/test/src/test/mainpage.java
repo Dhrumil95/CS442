@@ -119,8 +119,7 @@ public class mainpage
 		btnUpdateMap.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//instantiate the class to show the landlord data
-				//landlords probll = new landlords(frmNeighborhoodInformant);
-				new ProjectBrowser("Chicago Problematic Lanlords Data", "landlordmap.html", frmNeighborhoodInformant);
+				new LandLord(frmNeighborhoodInformant);
 				frmNeighborhoodInformant.setVisible(false);
 			}
 		});
