@@ -18,6 +18,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JMenuBar;
@@ -25,12 +27,13 @@ import javax.swing.JMenu;
 import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.print.DocFlavor.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 
 public class mainpage 
 {
-	String imagePath = "/Users/aiwanhazari/Desktop/NI_UI/workspace/test/src/test/chitown.jpg";
+	private String imagePath = null; 
 	private JFrame frmNeighborhoodInformant;
     
 	public static void main(String[] args) {
@@ -53,7 +56,11 @@ public class mainpage
 
 
 	private void initialize() 
-	{
+	{ 	try{
+		 imagePath = new Utilities().getFilePath("chitown.jpg");
+		} catch(FileNotFoundException e){
+			System.out.println("File not found: " + e.toString());
+		}
 		frmNeighborhoodInformant = new JFrame("Neighborhood Informant");
 		frmNeighborhoodInformant.getContentPane().setBackground(Color.BLACK);
 		frmNeighborhoodInformant.setTitle("Neighborhood Informant");
@@ -112,7 +119,8 @@ public class mainpage
 		btnUpdateMap.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//instantiate the class to show the landlord data
-				landlords probll = new landlords(frmNeighborhoodInformant);
+				//landlords probll = new landlords(frmNeighborhoodInformant);
+				new ProjectBrowser("Chicago Problematic Lanlords Data", "landlordmap.html", frmNeighborhoodInformant);
 				frmNeighborhoodInformant.setVisible(false);
 			}
 		});
@@ -124,7 +132,8 @@ public class mainpage
 		btnSchools.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//instantiate the class to show the browser to allow access to City of Chicago website
-				cityWeb citysite = new cityWeb(frmNeighborhoodInformant);
+				//cityWeb citysite = new cityWeb(frmNeighborhoodInformant);
+				new ProjectBrowser("City of Chicago Official Site", "https://data.cityofchicago.org", frmNeighborhoodInformant);
 				frmNeighborhoodInformant.setVisible(false);
 			}
 		});

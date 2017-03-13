@@ -14,55 +14,55 @@
  */
 
 package test;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.WindowConstants;
-import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.swing.BrowserView;
+import java.io.FileNotFoundException;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import com.teamdev.jxbrowser.chromium.*;
+import com.teamdev.jxbrowser.chromium.swing.*;
 
 @SuppressWarnings("serial")
-public class landlords extends JFrame 
+public class landlords
 {
-	String landlordMapPath = "/Users/aiwanhazari/Desktop/NI_UI/workspace/test/src/test/landlordmap.html";
+	private String landlordMapPath = null;
+	
+	// initializes everything
+	private void initialize(){
+		try{
+			landlordMapPath = new Utilities().getFilePath("landlordmap.html");
+		} catch(FileNotFoundException e){
+			System.out.println("File not found: " + e.toString());
+		}
+	}
+	
 	public landlords(JFrame mainMenu) 
 	{
+		// initializes everything
+		initialize();
+		
 		final Browser browser = new Browser();
         BrowserView view = new BrowserView(browser);
 
         JFrame frame = new JFrame("Chicago Problematic Lanlords Data");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1100, 600);
-		setBounds(100, 100, 636, 441);
         frame.setLocationRelativeTo(null); 
         
-        File checkfile = new File(landlordMapPath); 
-        if(checkfile.exists() == true)
-        {
-        	System.out.println("Loading Map...");
-        	frame.setVisible(true); 
-        	//load the map HTML file
-        	String loadmap = "file://" + landlordMapPath;
-            browser.loadURL(loadmap);
-        }
-        else
-        {
-         	JOptionPane.showMessageDialog(null, "Unable to load map!");
-         	frame.setVisible(false); 
-        }
+        String loadmap = "file://" + landlordMapPath;
+        browser.loadURL(loadmap);
 		
         
         JButton backButton = new JButton("Back to Main Menu");
         backButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				frame.setVisible(false);
                 mainMenu.setVisible(true);
-            }
+			}
         });
              
         JPanel toolBar = new JPanel();
