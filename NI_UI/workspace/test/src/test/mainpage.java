@@ -18,8 +18,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JMenuBar;
@@ -27,7 +25,6 @@ import javax.swing.JMenu;
 import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
-import javax.print.DocFlavor.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 
@@ -55,12 +52,8 @@ public class mainpage
 	}
 
 
-	private void initialize() 
-	{ 	try{
-		 imagePath = new Utilities().getFilePath("chitown.jpg");
-		} catch(FileNotFoundException e){
-			System.out.println("File not found: " + e.toString());
-		}
+	private void initialize() { 	
+		imagePath = new Utilities().getFilePath("chitown.jpg");
 		frmNeighborhoodInformant = new JFrame("Neighborhood Informant");
 		frmNeighborhoodInformant.getContentPane().setBackground(Color.BLACK);
 		frmNeighborhoodInformant.setTitle("Neighborhood Informant");
@@ -76,7 +69,7 @@ public class mainpage
 			public void actionPerformed(ActionEvent e) 
 			{
 				//instantiate the class to show the crime data
-				crimeMap cData = new crimeMap(frmNeighborhoodInformant);
+				new CrimeMap(frmNeighborhoodInformant);
 				frmNeighborhoodInformant.setVisible(false);
 			}
 		});
