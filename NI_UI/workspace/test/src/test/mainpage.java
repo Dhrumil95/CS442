@@ -124,8 +124,7 @@ public class mainpage
 		btnSchools.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//instantiate the class to show the browser to allow access to City of Chicago website
-				//cityWeb citysite = new cityWeb(frmNeighborhoodInformant);
-				new ProjectBrowser("City of Chicago Official Site", "https://data.cityofchicago.org", frmNeighborhoodInformant);
+				new CityWeb(frmNeighborhoodInformant);
 				frmNeighborhoodInformant.setVisible(false);
 			}
 		});

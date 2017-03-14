@@ -19,6 +19,8 @@ import javax.swing.JFrame;
 
 public class CrimeMap {
 	public CrimeMap(JFrame mainMenu){
-		new ProjectBrowser("City of Chicago Official Site","https://data.cityofchicago.org",mainMenu);
+		String fileName = new Utilities().getFilePath("crimemap.html");
+		System.out.println("filename from crimemap: " + fileName);
+		new ProjectBrowser("City of Chicago Crime Map",fileName, mainMenu);
 	}
 }
