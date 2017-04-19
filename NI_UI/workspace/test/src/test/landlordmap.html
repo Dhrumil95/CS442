@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Neighborhood Informant</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<title>Neighborhood Informant</title>
+<style>
+/* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
+#map {
+	height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
 
 
-  <body>
-    <div id="map"></div>
-    <script type="text/javascript" language="javascript" src="jquery-1.12.3.min.js"></script>        
-    <script type="text/javascript" language="javascript" src="problemlandlords.json"></script> 
-      
-   <script>
+<body>
+	<div id="map"></div>
+	<script type="text/javascript" language="javascript"
+		src="jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" language="javascript"
+		src="problemlandlords.json"></script>
+
+	<script>
        //get map data for landlord info
         var locations = [[], [], []];       //marker locations (lat+long)
        //initialize rest of locations array
@@ -98,8 +100,8 @@
       }
     </script>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?callback=initMap">
     </script>
-  </body>
+</body>
 </html>

@@ -18,6 +18,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JMenuBar;
@@ -47,13 +49,17 @@ public class mainpage
 	}
 
 	
-	public mainpage() {
-		initialize();
+	public mainpage() throws FileNotFoundException, IOException {
+		//initialize();
+		
+		JSON js = new JSON();
+		js.makeJSON("data/2016.csv");
+		js.printAll();
 	}
 
 
 	private void initialize() { 	
-		imagePath = new Utilities().getFilePath("chitown.jpg");
+		imagePath = new Utilities().getFilePathWithoutFile("chitown.jpg");
 		frmNeighborhoodInformant = new JFrame("Neighborhood Informant");
 		frmNeighborhoodInformant.getContentPane().setBackground(Color.BLACK);
 		frmNeighborhoodInformant.setTitle("Neighborhood Informant");
