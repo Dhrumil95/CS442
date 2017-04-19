@@ -50,7 +50,7 @@ public class mainpage
 
 	
 	public mainpage() throws FileNotFoundException, IOException {
-		//initialize();
+		initialize();
 		
 		JSON js = new JSON();
 		js.makeJSON("data/2016.csv");
