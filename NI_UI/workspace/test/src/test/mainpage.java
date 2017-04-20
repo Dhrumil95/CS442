@@ -20,6 +20,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JMenuBar;
@@ -34,6 +36,31 @@ public class mainpage
 {
 	private String imagePath = null;
 	private JFrame frmNeighborhoodInformant;
+	
+	private class TimerListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) 
+		{
+			// reading from the data file
+			JSON js = new JSON();
+			js.makeJSON("data/2016.csv");
+			//js.printAll();
+			
+			ArrayList<Data> data = js.getDataObject();
+			
+			// uploading to the database
+			int i = 0;
+			for(Data d : data){
+				Database.getDatabase().addNewData(d, d.id);
+				i++;
+			}
+		}
+	}
+	
+	public void fetchEveryTwoMinutes(){
+		Timer t = new Timer(10000, new TimerListener());
+		t.start();
+	}
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -41,6 +68,9 @@ public class mainpage
 				try {
 					mainpage window = new mainpage();
 					window.frmNeighborhoodInformant.setVisible(true);
+					
+					window.fetchEveryTwoMinutes();
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -51,10 +81,6 @@ public class mainpage
 
 	public mainpage() throws FileNotFoundException, IOException {
 		initialize();
-
-		JSON js = new JSON();
-		js.makeJSON("data/2016.csv");
-		js.printAll();
 	}
 
 
