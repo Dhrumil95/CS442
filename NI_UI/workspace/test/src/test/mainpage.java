@@ -51,7 +51,7 @@ public class mainpage
 			// uploading to the database
 			int i = 0;
 			for(Data d : data){
-				Database.getDatabase().addNewData(d, d.id);
+				//Database.getDatabase().addNewData(d, d.id);
 				i++;
 			}
 		}
