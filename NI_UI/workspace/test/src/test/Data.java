@@ -7,6 +7,9 @@ public class Data {
 	private String latitude;
 	private String address;
 	
+	// empty constructor
+	Data(){}
+	
 	Data(String y, String lo, String la, String addr){
 		year = y;
 		longitude = lo;

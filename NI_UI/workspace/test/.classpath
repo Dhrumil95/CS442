@@ -16,5 +16,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/jay/Documents/eclipse/CS442/NI_UI/workspace/test/lib/jxbrowser-6.14.jar"/>
+	<classpathentry kind="lib" path="/home/jay/Documents/eclipse/CS442/NI_UI/workspace/test/lib/jxbrowser-linux32-6.14.jar"/>
+	<classpathentry kind="lib" path="/home/jay/Documents/eclipse/CS442/NI_UI/workspace/test/lib/jxbrowser-linux64-6.14.jar"/>
+	<classpathentry kind="lib" path="/home/jay/Documents/eclipse/CS442/NI_UI/workspace/test/lib/jxbrowser-mac-6.14.jar"/>
+	<classpathentry kind="lib" path="/home/jay/Documents/eclipse/CS442/NI_UI/workspace/test/lib/jxbrowser-win32-6.14.jar"/>
+	<classpathentry kind="lib" path="/home/jay/Documents/eclipse/CS442/NI_UI/workspace/test/lib/license.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
