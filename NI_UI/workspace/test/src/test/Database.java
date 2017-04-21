@@ -26,7 +26,7 @@ public class Database {
 	
 	private void initialize(){
 		try{
-			FileInputStream serviceAccount = new FileInputStream(new Utilities().getFilePathWithoutFile("service_account.json"));
+			FileInputStream serviceAccount = new FileInputStream(new Utilities().getFilePathWithoutFile("data/service_account.json"));
 			FirebaseOptions options = new FirebaseOptions.Builder()
 					.setCredential(FirebaseCredentials.fromCertificate(serviceAccount))
 					.setDatabaseUrl(DATABASE_URL)
@@ -48,7 +48,7 @@ public class Database {
 			
 			@Override
 			public void onComplete(DatabaseError arg0, boolean arg1, DataSnapshot arg2) {
-				System.out.println("succesfully added data: " + arg2);
+				//System.out.println("succesfully added data: " + arg2);
 				
 			}
 			
