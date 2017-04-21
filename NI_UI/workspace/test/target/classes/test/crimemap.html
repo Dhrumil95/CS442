@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<title>Neighborhood Informant</title>
+<script sync src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<style>
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+	height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+
+
+<body>
+	<div id="map"></div>
+	<script type="text/javascript" language="javascript"
+		src="jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" language="javascript" src="crimes.json"></script>
+
+	<script defer src="js/Map.js"></script>
+	<script defer src="js/Firebase.js"></script>
+	<script defer src="js/Configuration.js"></script>
+	<script defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+</body>
+</html>
