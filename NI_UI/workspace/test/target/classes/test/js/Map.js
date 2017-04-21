@@ -5,9 +5,9 @@ class Map{
   }
 
   initialize(){
-      let latLong = {lat: 41.873, lng: -87.701};
+      let latLong = {lat: 41.873, lng: -87.63501};
       this.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
+        zoom: 13,
         center: latLong
       })
   }

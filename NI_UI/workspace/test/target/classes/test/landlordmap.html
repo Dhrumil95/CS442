@@ -12,7 +12,7 @@
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
-	height: 100%;
+	height: 80%;
 	margin: 0;
 	padding: 0;
 }
@@ -50,12 +50,12 @@ html, body {
             locations[i].push(0);
         }
        }
-       
+
        //get json data
        var cl = jsonObject.landlord.length;
        var a;
        //initialize map to be centered in chicago
-      function initMap() 
+      function initMap()
       {
         var myLatLng = {lat: 41.873, lng: -87.701};
 
@@ -63,23 +63,23 @@ html, body {
           zoom: 12,
           center: myLatLng
         });
-          
-       // $(document).ready(function(e) 
+
+       // $(document).ready(function(e)
        // {
             for(a = 1; a < cl-1; a++)
             {
                 locations[a][0] = jsonObject.landlord[a].desc;
                 locations[a][1] = jsonObject.landlord[a].lat;
-                locations[a][2] = jsonObject.landlord[a].lng; 
+                locations[a][2] = jsonObject.landlord[a].lng;
             }
         //});
-       
-         
+
+
         //var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
 
         var markers = [];
         var ll = locations.length;
-        for (var m = 0; m < ll; m++) 
+        for (var m = 0; m < ll; m++)
         {
             /*//add information window to each marker
             var infowindow = new google.maps.InfoWindow({
@@ -91,7 +91,7 @@ html, body {
             map: map,
             title: 'Problematic Landlords'
             });
-            
+
             /*
             markers[m].addListener('click', function() {
                 infowindow.open(map, markers[m]);

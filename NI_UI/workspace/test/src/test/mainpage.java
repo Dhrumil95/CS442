@@ -56,19 +56,20 @@ public class mainpage
 	}
 	
 	public void fetchEveryTwoMinutes(){
-//		Timer t = new Timer(10000, new TimerListener());
-//		t.start();
-		// reading from the data file
-		JSON js = new JSON();
-		js.makeJSON("data/2016.csv");
-		//js.printAll();
+		Timer t = new Timer(50000, new TimerListener());
+		t.start();
 		
-		ArrayList<Data> data = js.getDataObject();
-		
-		// uploading to the database
-		for(Data d : data){
-			Database.getDatabase().addNewData(d, d.id);
-		}
+//		// reading from the data file
+//		JSON js = new JSON();
+//		js.makeJSON("data/2016.csv");
+//		//js.printAll();
+//		
+//		ArrayList<Data> data = js.getDataObject();
+//		
+//		// uploading to the database
+//		for(Data d : data){
+//			Database.getDatabase().addNewData(d, d.id);
+//		}
 		
 	}
 
