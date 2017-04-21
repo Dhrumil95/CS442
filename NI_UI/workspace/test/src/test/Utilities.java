@@ -17,7 +17,6 @@ public class Utilities {
 	private String getFilePathHelper(String fileName){
 		try{
 			fileName = _getFilePath(fileName);
-			System.out.println("fileName: " + fileName);
 		} catch(FileNotFoundException e){
 			System.out.println("File not found: " + e.toString());
 		}
