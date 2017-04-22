@@ -1,0 +1,21 @@
+var jsonObject = { "landlord" : [ 
+                               { "lat": 41.6881178348 , "lng": -87.626052479, "desc": "108 W 113TH PL, Woo S Chung; Eun Y Sakanashi, ROSELAND" }, 
+                               { "lat": 41.6929862058 , "lng": -87.6566523483, "desc": "1353-55 W 110TH PL, Felice's Investments, Inc, MORGAN PARK" },
+                               { "lat": 41.7906705731 , "lng": -87.7180617148, "desc": "3758 W 56TH PL, Hameed O Andu, WEST ELSDON" },
+                               { "lat": 41.8767535335 , "lng": -87.7437304528, "desc": "4725 W JACKSON BLVD, Danny Wilmington, AUSTIN" },
+                               { "lat": 41.8006272561 , "lng": -87.6685580382, "desc": "5120 S HERMITAGE AVE, Enos L Vassail; Orni M Vassail, NEW CITY" },
+                               { "lat": 41.8756204042 , "lng": -87.7568527612, "desc": "5249 W GLADYS AVE, Michael Fort, AUSTIN" },
+                               { "lat": 41.7834230916 , "lng": -87.6110179015, "desc": "6116 S ST LAWRENCE AVE, Greenwood Investment Properties, LLC, WOODLAWN" },
+                               { "lat": 41.7809671136 , "lng": -87.6689548992, "desc": "6218 S VERNON AVE, Inclined Plane Enterprises LLC, WOODLAWN" },
+                               { "lat": 41.7772070354 , "lng": -87.6318925469, "desc": "6430 S YALE AVE, Hazel Farley; Samuel Farley, ENGLEWOOD" },
+                               { "lat": 41.7679404821 , "lng": -87.6455614559, "desc": "6929 S GREEN ST, Curtis Turner, ENGLEWOOD" },
+                               { "lat": 41.7659300979 , "lng": -87.6929154749, "desc": "7013 S CALIFORNIA AVE, Trechy Beasley, CHICAGO LAWN" },
+                               { "lat": 41.7554854307 , "lng": -87.6491660167, "desc": "7616 S MORGAN ST, Jerome Bailey, AUBURN GRESHAM" },
+                               { "lat": 41.7535911554 , "lng": -87.6503304734, "desc": "7718-20 S CARPENTER ST, Terrence Bell, AUBURN GRESHAM" },
+                               { "lat": 41.7493511335 , "lng": -87.6013466608, "desc": "8003-05 S INGLESIDE AVE	935 E 80TH ST, Tahir M Sheikh, CHATHAM" },
+                               { "lat": 41.7478803456 , "lng": -87.5757697848, "desc": "8101 S JEFFERY BLVD, Property Tax Professionals LLC, SOUTH CHICAGO" },
+                               { "lat": 41.7944043015 , "lng": -87.6465392442, "desc": "832 W GARFIELD BLVD, Jimmie Lockett, NEW CITY" },
+                               { "lat": 41.7272579812 , "lng": -87.5467103674, "desc": "9235 S BRANDON AVE, Brandy Collins, SOUTH CHICAGO" }
+                    ]
+                 }
+

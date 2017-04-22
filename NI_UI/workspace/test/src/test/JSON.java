@@ -13,10 +13,14 @@ public class JSON {
 		dataObject = new ArrayList<Data>();
 	}
 	
+	public ArrayList<Data> getDataObject(){
+		return dataObject;
+	}
+	
 	// prints the entire dataObject
 	public void printAll(){
 		for(Data d : dataObject ){
-			System.out.println(d);
+			System.out.println(d.id);
 		}
 		
 		System.out.println("total length: " + dataObject.size());
@@ -80,7 +84,7 @@ public class JSON {
 				
 				// checks to see if there are data will empty values or missing parameters
 				if(data.length <= 20) continue;
-				if(data[3] == null || data[17] == null || data[19] == null || data[20] == null) continue;
+				if(data[0] == null || data[3] == null || data[17] == null || data[19] == null || data[20] == null) continue;
 				
 				// address
 				String address = data[3];
@@ -94,10 +98,13 @@ public class JSON {
 				// longitude
 				String lon = data[20];
 				
+				// id
+				String id = data[0];
+				
 				// checking if all the variables are valid integer and doubles
 				if(isInteger(year) && isDouble(lat) && isDouble(lon)){
 					if(isLongitudeValid(lon) && isLatitudeValid(lat)){
-						dataObject.add(new Data(year, lon, lat, address));
+						dataObject.add(new Data(year, lon, lat, address, id));
 					} else {
 						System.out.println("lon: " + lon + " lat: " + lat);
 					}
