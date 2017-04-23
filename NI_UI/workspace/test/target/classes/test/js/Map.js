@@ -16,7 +16,7 @@ class Map{
     if(color == "green") color = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
     else if (color == 'red') color = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
     else if(color == 'blue') color = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
-    else color = 'red';
+    else color = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
 
     new google.maps.Marker({
       position: latLong,
