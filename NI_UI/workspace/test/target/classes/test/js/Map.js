@@ -13,16 +13,17 @@ class Map{
   }
 
   addMarker(latLong, color){
+    console.log('add new latlong: ', latLong);
     if(color == "green") color = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
     else if (color == 'red') color = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
     else if(color == 'blue') color = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
-    else color = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+    //else color = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
 
     new google.maps.Marker({
       position: latLong,
       map: this.map,
       title: 'Crime',
-      icon: color
+      icon: color,
     });
   }
 }

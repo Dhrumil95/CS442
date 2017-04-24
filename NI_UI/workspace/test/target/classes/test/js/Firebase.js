@@ -21,13 +21,15 @@ class Firebase{
   getData(){
     firebase.database().ref('year/').on('child_added', (data) => {
       //console.log("data.key: ", data.key);
-      let obj = {lat: Number(data.val().lat), lng: Number(data.val().lng)};
+      console.log("datakey: ", data.val());
+      let obj = {lat: Number(data.val().latitude), lng: Number(data.val().longitude)};
       this.addNewMarker(obj, 'red');
     });
 
     firebase.database().ref('year/').on('child_changed', (data) => {
       //console.log("new data: ", data.val());
-      let obj = {lat: Number(data.val().lat), lng: Number(data.val().lng)};
+      let obj = {lat: Number(data.val().latitude), lng: Number(data.val().longitude)};
+      //let obj = {lat: Number(data.val().lat), lng: Number(data.val().lng)};
       this.addNewMarker(obj, 'red');
     });
   }
