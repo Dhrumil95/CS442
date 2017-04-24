@@ -1,0 +1,8 @@
+Code Git Repository Information
+CS 442, Spring 2017
+Group 2: Aiwan Hazari, Jay Patel, Dhrumil Patel, & Deven Patel
+==============================================================
+
+Our current code is in the git repo: https://github.com/Dhrumil95/CS442
+
+To attain/clone code, in terminal window type command: git clone https://github.com/Dhrumil95/CS442.git
