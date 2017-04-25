@@ -4,6 +4,8 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <title>Neighborhood Informant</title>
+<script sync src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<script type="text/javascript" language="javascript" src="jquery-1.12.3.min.js"></script>
 <style>
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -12,7 +14,7 @@
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
-	height: 100%;
+	height: 90%;
 	margin: 0;
 	padding: 0;
 }
@@ -21,87 +23,32 @@ html, body {
 
 
 <body>
-	<div id="map"></div>
-	<script type="text/javascript" language="javascript"
-		src="jquery-1.12.3.min.js"></script>
-	<script type="text/javascript" language="javascript"
-		src="problemlandlords.json"></script>
+	<div id='address'>
+		<br>
+		<form>
+			Enter Address: <input type="text" name="address" id="formAddress">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<br>
 
 	<script>
-       //get map data for landlord info
-        var locations = [[], [], []];       //marker locations (lat+long)
-       //initialize rest of locations array
-       var r = 3; //start from rows 3
-       var c = 5; //start from col 5
+		$('#address').on('submit', (e) => {
+			// prevent default to stop the page from refreshing
+			e.preventDefault();
+			// let l = new LandLord();
+			// l.formSubmit();
+			LandLord.formSubmit();
+		});
+	</script>
 
-       var rows = 100;
-       var cols = 3;
 
-       // expand to have the correct amount or rows
-       for( var i=r; i<rows; i++ ) {
-            locations.push( [] );
-       }
+	<div id="map"></div>
 
-       // expand all rows to have the correct amount of cols
-       for (var i = 0; i < rows; i++)
-       {
-        for (var j =  locations[i].length; j < cols; j++)
-        {
-            locations[i].push(0);
-        }
-       }
-       
-       //get json data
-       var cl = jsonObject.landlord.length;
-       var a;
-       //initialize map to be centered in chicago
-      function initMap() 
-      {
-        var myLatLng = {lat: 41.873, lng: -87.701};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: myLatLng
-        });
-          
-       // $(document).ready(function(e) 
-       // {
-            for(a = 1; a < cl-1; a++)
-            {
-                locations[a][0] = jsonObject.landlord[a].desc;
-                locations[a][1] = jsonObject.landlord[a].lat;
-                locations[a][2] = jsonObject.landlord[a].lng; 
-            }
-        //});
-       
-         
-        //var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-
-        var markers = [];
-        var ll = locations.length;
-        for (var m = 0; m < ll; m++) 
-        {
-            /*//add information window to each marker
-            var infowindow = new google.maps.InfoWindow({
-                content: str
-            });
-            */
-            markers[m] = new google.maps.Marker({
-            position: {lat: locations[m][1], lng: locations[m][2]},
-            map: map,
-            title: 'Problematic Landlords'
-            });
-            
-            /*
-            markers[m].addListener('click', function() {
-                infowindow.open(map, markers[m]);
-            });*/
-        }
-      }
-    </script>
-
-	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-    </script>
+	<script defer src="js/Map.js"></script>
+	<script defer src="js/Firebase.js"></script>
+	<script defer src="js/LandLord.js"></script>
+	<script defer src="js/Configuration.js"></script>
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ89sfoB8jUVepX2S1ZHnXqpUwdT0U2-c&callback=initMap"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
+var fbase;
 
 var initMap = () => {
-    let fbase = new Firebase();
-    fbase.displayData();
+  fbase = new Firebase();
+  fbase.displayData();
 }

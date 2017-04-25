@@ -21,15 +21,21 @@ class Firebase{
   getData(){
     firebase.database().ref('year/').on('child_added', (data) => {
       //console.log("data.key: ", data.key);
-      let obj = {lat: Number(data.val().lat), lng: Number(data.val().lng)};
-      this.map.addMarker(obj);// console.log("data.val().text ", data.val().lat);
+      console.log("datakey: ", data.val());
+      let obj = {lat: Number(data.val().latitude), lng: Number(data.val().longitude)};
+      this.addNewMarker(obj, 'red');
     });
 
     firebase.database().ref('year/').on('child_changed', (data) => {
       //console.log("new data: ", data.val());
-      let obj = {lat: Number(data.val().lat), lng: Number(data.val().lng)};
-      this.map.addMarker(obj);
+      let obj = {lat: Number(data.val().latitude), lng: Number(data.val().longitude)};
+      //let obj = {lat: Number(data.val().lat), lng: Number(data.val().lng)};
+      this.addNewMarker(obj, 'red');
     });
+  }
+
+  addNewMarker(latLong, color){
+    this.map.addMarker(latLong, color);
   }
 
   displayData(){
