@@ -1,22 +1,22 @@
 ===============================================================================
 ===============================================================================
-*				  PROJECT DETAILS:			      *
+				  PROJECT DETAILS:			      
 ===============================================================================
 ===============================================================================
 -> Neighborhood Informant project made in CS 442 by Aiwan Hazari, Jay Patel, 
-Dhrumil Patel, and Deven Patel
+Dhrumil Patel, and Deven Patel in Spring 2017
 -> Implements the use of Java, JxBrowser, HTML, Javascript, Google Maps API, 
 Firebase
 
 
 ===============================================================================
 ===============================================================================
-*				    REQUIREMENTS:			      *
+				    REQUIREMENTS:			      
 ===============================================================================
 ===============================================================================
 -> Assimilate absolute paths accordingly (in java classes)
 -> JxBrowser must be downloaded for some interface functionality 
-  * Must acquire a license (for academic and open source purposes, this is free)
+  * Must acquire a license
 -> Jar files must be (in /test/  and  
 /test/jxbrowser-6.12-cross-desktop-win_mac_linux/lib/  folders) built onto path 
 before compilation: 
